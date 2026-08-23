@@ -1,13 +1,169 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
-  <title id="title">Outdoor market illustration</title>
-  <desc id="desc">A stylized market booth with plants, produce baskets, and repair tools.</desc>
-  <rect width="720" height="480" fill="#fff3d5"/>
-  <rect x="92" y="128" width="536" height="250" rx="18" fill="#fffdf7" stroke="#2f5d50" stroke-width="8"/>
-  <path d="M120 128h480l-42-70H162z" fill="#c65f3d"/>
-  <path d="M150 128l38-70h44l-25 70zM284 128l10-70h48l-4 70zM422 128l-12-70h48l31 70z" fill="#d6e05d" opacity=".9"/>
-  <circle cx="210" cy="254" r="42" fill="#d6e05d"/>
-  <circle cx="278" cy="254" r="42" fill="#c65f3d"/>
-  <rect x="370" y="220" width="140" height="90" rx="10" fill="#2f5d50"/>
-  <path d="M396 250h88M396 278h66" stroke="#fffdf7" stroke-width="14" stroke-linecap="round"/>
-  <rect x="160" y="340" width="400" height="20" rx="10" fill="#9c927f"/>
-</svg>
+:root {
+  --green: #2f5d50;
+  --lime: #d6e05d;
+  --clay: #c65f3d;
+  --paper: #fffdf7;
+  --ink: #1c1b18;
+  --muted: #f0eadb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--green);
+}
+
+a:focus {
+  outline: 0;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: var(--green);
+}
+
+.logo,
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  font-weight: 700;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  white-space: nowrap;
+}
+
+.page {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.eyebrow {
+  color: var(--clay);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.lede {
+  font-size: 1.2rem;
+}
+
+.button,
+button {
+  display: inline-block;
+  background: var(--lime);
+  color: #17342c;
+  border: none;
+  border-radius: .4rem;
+  padding: .8rem 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.feature-row,
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 1rem;
+}
+
+.feature-card,
+.vendor-card {
+  padding: 1rem;
+  border-radius: .5rem;
+  background: var(--muted);
+  border: 1px solid #d7ccb7;
+}
+
+main .vendor-grid article.special {
+  background: var(--green);
+  color: white;
+}
+
+.directions img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+td {
+  border: 1px solid #bcb4a4;
+  padding: .75rem;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+}
+
+label {
+  display: grid;
+  gap: .35rem;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  border: 1px solid #9c927f;
+  border-radius: .25rem;
+  padding: .6rem;
+}
+
+textarea {
+  min-height: 8rem;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: var(--muted);
+}
+
+@media (min-width: 980px) and (max-width: 760px) {
+  .hero,
+  .feature-row,
+  .vendor-grid {
+    grid-template-columns: 1fr;
+  }
+}
